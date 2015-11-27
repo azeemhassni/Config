@@ -1,0 +1,24 @@
+{
+  "name": "azi/config",
+  "description": "Easy Configration Management Library",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Azi Baloch",
+      "email": "azibaloch247@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Azi\\": "src"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "require-dev": {
+    "phpunit/phpunit": "5.0.*"
+  }
+}
