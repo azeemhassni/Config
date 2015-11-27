@@ -1,6 +1,6 @@
 {
   "name": "azi/config",
-  "description": "Easy Configration Management Library",
+  "description": "Easy Configuration Management Library",
   "type": "library",
   "license": "MIT",
   "authors": [
