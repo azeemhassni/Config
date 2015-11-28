@@ -5,10 +5,7 @@ class ConfigTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        # Change the configuration files directory for tests
-        if (!defined('PATH_TO_CONFIG_DIR')) {
-            define('PATH_TO_CONFIG_DIR', dirname(__FILE__) . '/config/');
-        }
+        \Azi\Config::setConfigDirectory(__DIR__.'/config');
     }
 
     /**
@@ -16,7 +13,7 @@ class ConfigTest extends PHPUnit_Framework_TestCase
      */
     public function it_fetches_all_config_data_from_file()
     {
-        $this->assertEquals(array('some_key' => 'some_value'), \Azi\Config::get('sample'));
+        $this->assertInstanceOf('Azi\\ConfigNode', \Azi\Config::get('sample'));
     }
 
     /**
@@ -25,6 +22,30 @@ class ConfigTest extends PHPUnit_Framework_TestCase
     public function it_fetches_single_value_form_file()
     {
         $this->assertEquals('some_value', \Azi\Config::get('sample.some_key'));
+    }
+
+    /**
+     * @test
+     */
+    public function it_fetches_node_values_from_file()
+    {
+        $this->assertInstanceOf('Azi\\ConfigNode', \Azi\Config::get('sample.some_array'));
+    }
+
+    /**
+     * @test
+     */
+    public function invalid_file()
+    {
+        $this->assertNull(\Azi\Config::get('foo'));
+    }
+
+    /**
+     * @test
+     */
+    public function array_values()
+    {
+        $this->assertArrayHasKey('foo', \Azi\Config::get('sample.some_array')->asArray());
     }
 
     /**
