@@ -24,8 +24,9 @@ class Config
         unset( $values[ 0 ] );
 
         if (!defined('PATH_TO_CONFIG_DIR')) {
-            define('PATH_TO_CONFIG_DIR', dirname(dirname(__FILE__)) . "/config/");
+            define('PATH_TO_CONFIG_DIR', dirname(dirname(dirname(dirname(dirname(__FILE__))))) . "/config/");
         }
+
 
         $filePath = PATH_TO_CONFIG_DIR . $fileName . ".php";
         if (!file_exists($filePath)) {
