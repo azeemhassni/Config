@@ -47,3 +47,8 @@ lets say you want to store your database configuration values here. you will hav
     // will return 127.0.0.1
     $host = config('database.mysql.host');
   ```
+  
+  
+  # Contributers
+*  [@azeemhassni](https://github.com/azeemhassni)
+* [@Golpha](https://github.com/Golpha)
