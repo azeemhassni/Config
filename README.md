@@ -38,6 +38,13 @@ lets say you want to store your database configuration values here. you will hav
   ```php
      // will return 127.0.0.1
   $host = Azi\Config::get('database.mysql.host');
+  
+  // OR
+  $db = Azi\Config::get('database.mysql');
+  $host = $db->get('host');
+  $username = $db->get('username');
+  $password = $db->get('password');
+  
   ```
 
   with this package you will also get a little helper function to access values you can also write the above code
