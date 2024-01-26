@@ -4,10 +4,7 @@
 ---
 Easy Configuration Management Library
 
-if your are writing a WordPress theme or a php application obviously you will have some configuration values.
-you will create a file with bunch of variable and constants and include every file in your script which is not an
-intuitive way as I feel. I like the way laravel handles configuration values. but we can't use laravel in our
-WordPress themes that's why I wrote **Config**
+If you are writing a WordPress theme or a PHP application, most likely you will have some configuration values. The conventional approach involves creating a file with a bunch of variables and constants, then including every file in your script, which may not be the most intuitive way. Inspired by Laravel's elegant configuration handling, I developed Config to provide a similar experience for PHP projects, especially in the context of WordPress themes.
 
 ---
 
